@@ -39,7 +39,7 @@ alias ltr='ls -ltr'
 alias lu='ls -lu'
 alias lur='ls -lur'
 alias lx='ls -lXB'
-
+alias cl='cd $1; ll'
 
 #=============================================================================
 # alias for cd
