@@ -8,9 +8,9 @@
 
 function wechat() {
     WECHAT_APP_BIN=$HOME/app/electronic-wechat-linux-x64/electronic-wechat
-    WECHAT_APP_PID=`pgrep -fo "electronic-wechat"`
+    WECHAT_APP_PID=`findpid ${WECHAT_APP_BIN##*/}`
     if [[ ! $WECHAT_APP_PID ]]; then
-    	[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && nohup $WECHAT_APP_BIN > /dev/null 2>&1 &
+        [[ -s ${WECHAT_APP_BIN} ]] && nohup $WECHAT_APP_BIN > /dev/null 2>&1 &
     else
         echo
         echo "electronic-wechat started $WECHAT_APP_PID"

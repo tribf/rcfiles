@@ -15,7 +15,7 @@ function cmaket() {
             if [[ `basename $CURDIR` == 'build' ]]; then
                 cmake .. && make
             else
-                oocmake
+                mkdir build && cd build && cmake .. && make
             fi
             ;;
         clean )
