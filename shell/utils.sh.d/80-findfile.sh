@@ -5,10 +5,6 @@
 #  \__|_|  (_)_.__/|_|
 #
 
-
-function _exit()
-{
-    echo -e "${RED}Hasta la vista, ${USERNAME}${NC}"
-    sleep 1
+function ff() {
+    find . -type f -iname '*'$*'*' -ls
 }
-trap _exit EXIT
