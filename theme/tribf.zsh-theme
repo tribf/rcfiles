@@ -9,7 +9,7 @@ rbenv_version() {
 }
 
 PROMPT='
-%{$fg_bold[red]%}(^o^) =--> %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{$fg_bold[blue]%}%*%{$reset_color%}
+%{$fg_bold[red]%}(^o^) %n@%m =--> %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{$fg_bold[blue]%}%*%{$reset_color%}
 (.O.) =--> '
 
 
