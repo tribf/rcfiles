@@ -89,12 +89,11 @@ else
 	alias -s jpg=eog
 	alias -s pdf=evince
 	alias -s html=google-chrome
-    alias -s py=vi
     alias -s js=vi
     alias -s c=vi
     alias -s java=vi
     alias -s txt=vi
-    alias -s gz='tar -xzvf'
+    alias -s gz='gzip -d'
     alias -s tgz='tar -xzvf'
     alias -s zip='unzip'
     alias -s bz2='tar -xjvf'
