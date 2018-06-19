@@ -23,18 +23,11 @@ case `uname -o` in
         export PATH=$PATH:/c/Users/SIAE302_BF/AppData/Local/atom/bin
         ;;
     GNU/Linux)
-
         # export PATH=$PATH:/opt/clion-2016.2.2/bin/
         # export PATH=$PATH:/opt/Qt5.7.0/Tools/QtCreator/bin/
         # export PATH=$PATH:/opt/arduino-1.6.12/
         # export PATH=$PATH:/opt/arduino-1.6.12/hardware/tools/avr/bin
         export PATH=$PATH:$HOME/app/racket/bin
-
-        ##########---------- set PATH NodeJS ----------###########
-        export N_PREFIX=$HOME/app/noderoot
-        export NODEJS_HOME=$N_PREFIX
-        export PATH=$PATH:$NODEJS_HOME/bin
-
 
         ##########---------- set PATH miniconda3 ----------###########
         export PATH=$PATH:$HOME/app/miniconda3/bin
@@ -46,7 +39,6 @@ case `uname -o` in
         ##########---------- set PATH GO ----------###########
         export GOROOT=$HOME/app/go
         export PATH=$PATH:$GOROOT/bin
-
 
         ##########---------- set PATH OC ----------###########
         export PATH=$PATH:$HOME/app/oc
