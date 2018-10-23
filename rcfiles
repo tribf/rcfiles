@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# git clone --depth 1 https://github.com/tribf/rcfiles.git rcfiles && cd rcfiles
+
+echo "checking Zsh installation"
+if type zsh
+then
+	echo ""
+	echo "zsh already installed"
+	echo ""
+else
+	echo -n "do you want to install zsh? [Y/N]"
+	read install_zsh
+
+	if [ $install_zsh == 'Y' ] || [ $install_zsh == 'y' ]
+	then
+		echo ""
+		echo "install zsh"
+		echo ""
+
+		sudo apt-get install zsh fonts-powerline
+	else
+		echo ""
+		echo "skip installation of zsh"
+		echo ""
+	fi
+fi
+
+echo "checking oh_my_zsh installation"
+if [ -d ~/.oh-my-zsh ]
+then
+	echo "oh_my_zsh already installed"
+else
+	echo -n "do you want to install oh_my_zsh? [Y/N]"
+	read install_omz
+	if [ $install_omz == 'Y' ] || [ $install_omz == 'y' ]
+	then
+		echo ""
+		echo "install oh_my_zsh"
+		echo ""
+
+		sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+		chsh -s /bin/zsh
+	else
+		echo ""
+		echo "skip installation of oh_my_zsh"
+		echo ""
+	fi
+fi
+
+echo -n "do you want to install rcfiles? [Y/N]"
+read install_rcfiles
+if [ $install_omz == 'Y' ] || [ $install_omz == 'y' ]
+then
+	shell_file_file=`readlink -f shell/shell.sh`
+	echo "source $shell_file_file" >> ~/.zshrc
+
+	theme_file=`readlink -f theme/tribf.zsh-theme`
+	ln -s $theme_file ~/.oh-my-zsh/themes/tribf.zsh-theme
+	sed -i '/ZSH_THEME=".*"/c\ZSH_THEME="tribf"' ~/.zshrc
+else
+	echo ""
+	echo "skip installation of rcfiles"
+	echo ""
+fi
