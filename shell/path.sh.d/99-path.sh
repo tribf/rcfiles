@@ -36,10 +36,6 @@ case `uname -o` in
         export SCALA_HOME=/opt/scala-2.12.1
         export PATH=$PATH:${SCALA_HOME}/bin
 
-        ##########---------- set PATH GO ----------###########
-        export GOROOT=$HOME/app/go
-        export PATH=$PATH:$GOROOT/bin
-
         ##########---------- set PATH OC ----------###########
         export PATH=$PATH:$HOME/app/oc
 
