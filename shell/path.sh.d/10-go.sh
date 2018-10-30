@@ -8,5 +8,5 @@
 
 ##########---------- set PATH GO ----------###########
 export GOROOT=$HOME/app/go
-export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/tribfworkspace/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
