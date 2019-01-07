@@ -7,6 +7,6 @@
 
 
 function scan_rasp() {
-	MY_IP_MASK=`my_ip_mask`
-	sudo nmap -sn $MY_IP_MASK | grep Raspberry -B2
+    MY_IP_MASK=`my_ip_mask`
+    sudo nmap -sn $MY_IP_MASK | grep Raspberry -B2
 }
