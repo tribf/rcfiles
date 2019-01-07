@@ -6,13 +6,13 @@
 #
 
 
-function whereip()
-{
+function whereip() {
     argument=${1:-"where"}
-    
+
     case $argument in
     where|ip|whereip|show)
         curl --silent http://ip.cn 2>&1
+        # curl http://icanhazip.com
         ;;
     proxy|world|global)
         export HTTPS_PROXY=http://127.0.0.1:1080

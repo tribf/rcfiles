@@ -16,10 +16,14 @@ function ssh2comp() {
         con | connect )
             if [[ -z `findpid ${SSH_L_STR}` ]]; then
                 ssh -fNg -o serveraliveinterval=60 -L ${SSH_L_STR} root@aliyun_tribf_01
+            else
+                echo "${SSH_L_STR} exist"
             fi
 
             if [[ -z `findpid ${SSH_D_STR}` ]]; then
                 ssh -qTfnN -D ${SSH_D_STR} -p ${LPORT} tribf@localhost
+            else
+                echo "${SSH_D_STR} exist"
             fi
             ;;
         ssh )

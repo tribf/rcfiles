@@ -24,3 +24,9 @@ export JAVA_HOME=$HOME/app/jdk1.8.0_121
 # export JAVA_HOME=$HOME/app/jdk1.7.0_71
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$CLASSPATH
 export PATH=$PATH:$JAVA_HOME/bin
+
+#=============================================================================
+# set path for spring cli
+#=============================================================================
+export SPRING_CLI_HOME=$HOME/app/spring-2.0.4.RELEASE
+export PATH=$PATH:$SPRING_CLI_HOME/bin

@@ -6,8 +6,6 @@
 #
 
 
-function _exit() {
-    echo -e "${RED}Hasta la vista, ${USERNAME}${NC}"
-    sleep 1
+function fswebcam_snap() {
+    fswebcam -r 1920x1080 --jpeg 85 -D 1 snap.jpg
 }
-trap _exit EXIT
