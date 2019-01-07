@@ -9,8 +9,7 @@
 #=============================================================================
 # set path for ANT
 #=============================================================================
-# export ANT_HOME=/home/tribf/app/apache-ant-1.10.1
-export ANT_HOME=$HOME/app/apache-ant-1.9.9
+export ANT_HOME=$HOME/app/apache-ant-1.10.1
 export PATH=$PATH:$ANT_HOME/bin
 
 #=============================================================================
