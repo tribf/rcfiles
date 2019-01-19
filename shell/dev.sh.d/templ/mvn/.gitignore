@@ -1,0 +1,17 @@
+# Maven
+target/
+
+
+# IntelliJ Idea
+.idea/
+out/
+*.ipr
+*.iws
+*.iml
+
+# log4j
+logs/
+
+
+# GIT
+.gitignore
