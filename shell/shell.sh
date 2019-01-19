@@ -19,7 +19,7 @@ case `basename $SHELL` in
 esac
 
 TRIBF_SHELL_FILE_PATH=`readlink -f $TRIBF_SHELL_FILE`
-TRIBF_SHELL_HOME=`dirname "$TRIBF_SHELL_FILE_PATH"`
+export TRIBF_SHELL_HOME=`dirname "$TRIBF_SHELL_FILE_PATH"`
 if [ -z "$TRIBF_SHELL_HOME" ] ; then
     echo
     echo "Error: TRIBF_SHELL_HOME environment variable is not defined correctly."
@@ -55,9 +55,8 @@ done
 #=============================================================================
 # source dev utils
 #=============================================================================
-for file in `ls $TRIBF_SHELL_HOME/dev.sh.d/*.sh`; do
-    source $file
-done
+export DEV_UTIL_HOME=$TRIBF_SHELL_HOME/dev.sh.d
+export PATH=$PATH:$DEV_UTIL_HOME
 
 
 #=============================================================================
