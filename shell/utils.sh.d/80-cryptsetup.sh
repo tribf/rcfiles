@@ -21,7 +21,7 @@ function crypt_img() {
                 if [[ -e $IMG ]]; then
                     sudo cryptsetup -y luksOpen $IMG tribfVolume
                     sudo mount $MAPPER $DISK
-                    chown tribf:tribf $DISK -R
+                    sudo chown tribf:tribf $DISK -R
                 else
                     echo ""
                     echo "encrypted image($IMG) not exist"
@@ -38,7 +38,7 @@ function crypt_img() {
             ;;
         * )
             echo
-            echo "$0 [load|unload]"
+            echo "$0 [load|unload|cd]"
             echo
             ;;
     esac
