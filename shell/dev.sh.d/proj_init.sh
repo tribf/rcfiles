@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -ex
-
 function mvninit() {
   if [ $# != 3 ]; then
       echo "$0 com.tribf.appname 1.8 qs"
