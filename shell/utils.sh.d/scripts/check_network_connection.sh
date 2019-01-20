@@ -8,11 +8,11 @@
 # @date:    2018-06-04
 # @note:    It requires the installed packages curl sox libsox-fmt-all cron
 #
-#           1. copy this script to /home/feeyo/app/check_network_connection.sh
-#           2. copy warning.wav to /home/feeyo/app/warning.wav
-#           3. chmod a+x /home/feeyo/app/check_network_connection.sh
+#           1. copy this script to /home/tribf/app/check_network_connection.sh
+#           2. copy warning.wav to /home/tribf/app/warning.wav
+#           3. chmod a+x /home/tribf/app/check_network_connection.sh
 #           4. crontab -e, and add the following line
-#               * * * * * /home/feeyo/app/check_network_connection.sh
+#               * * * * * /home/tribf/app/check_network_connection.sh
 ###############################################################################
 
 TEST_HOST="http://www.baidu.com"
