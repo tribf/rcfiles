@@ -15,4 +15,4 @@ export HISTFILESIZE=999999
 # don't put duplicate lines or lines starting with space in the history.
 export HISTCONTROL=ignoreboth
 
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:ll:pwd'
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls:ll:pwd:kill:gl:gp:gst:tail:cat:netstat'
