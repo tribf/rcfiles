@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+strings=(
+    "hello world!"
+    "hello bash"
+)
+
+for ((i = 0; i < \${#strings[@]}; i++))
+do
+    string=\${strings[\$i]}
+    echo \$i/\${#strings[@]} : \$string 
+done
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>for</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.shell</scope>
+	<discription>for: array of string with space</discription>
+</snippet>
+
+

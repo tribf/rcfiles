@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+always @(posedge ${1:clk} or negedge ${2:rst_n} or posedge ${3:set}) begin
+	if (!${2:rst_n}) begin
+		// reset
+		${4}
+	end
+	else if (${3:set}) begin
+		${5}
+	end
+	else if () begin
+		
+	end
+end
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>always</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.verilog</scope>
+	<discription>always block with clr and set, clr has higher priority</discription>
+</snippet>

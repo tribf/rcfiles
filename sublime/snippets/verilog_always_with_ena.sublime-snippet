@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+always @(posedge ${1:clk}) begin
+	if (ena) begin
+		// enable
+		${2}
+	end
+end
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>always</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.verilog</scope>
+	<discription>always block with ena</discription>
+</snippet>

@@ -1,0 +1,3 @@
+[
+	{"keys": ["ctrl+u+d"], "command": "run_macro_file", "args": {"file": "res://Packages/User/markdown_diary_todo.sublime-macro"}}
+]

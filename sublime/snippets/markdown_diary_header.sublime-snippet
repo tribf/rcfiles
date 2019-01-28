@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+# ${1:datetime}
+## 乱我心者,今日之日多烦忧
+${2}
+## 弃我去者,昨日之日不可留
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>diary_h</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html.markdown</scope>
+	<discription>tribf diary header</discription>
+</snippet>

@@ -1,0 +1,5 @@
+[
+    { "command": "insert_snippet", "args": {"contents": "[UNDONE] @$1 -> $0"} },
+    { "command": "insert_date", "args": {"format": "iso"} },
+    { "command": "next_field" },
+]

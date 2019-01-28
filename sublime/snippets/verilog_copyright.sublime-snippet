@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+/// @file ${1:filename}
+/// @brief ${2:description}
+/// @author tribf tribf@tribf.com
+/// @version 1.0
+/// @date ${3:date}
+/// @note
+///////////////////////////////////////////////////////////////////////////////
+
+// <Date>		| <Version>	| <Author>	| <Description>
+// ----------------------------------------------------------------------------
+// ${3:date}  	|  1.0 		| tribf 	| 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>copyright</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.verilog</scope>
+	<discription>copyright</discription>
+</snippet>
+
