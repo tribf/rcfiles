@@ -1,12 +1,12 @@
 [user]
-	email = tribf@tribf.com
-	name = tribf
+    email = tribf@tribf.com
+    name = tribf
 
 [core]
-	editor = vim
-	excludesfile = /home/tribf/.gitignore_global
-	pager=less -x4
-	autocrlf = input
+    editor = vim
+    excludesfile = /home/tribf/.gitignore_global
+    pager=less -x4
+    autocrlf = input
 
 [color]
     branch = auto
@@ -31,11 +31,11 @@
     untracked = cyan
 
 [push]
-	default = simple
+    default = simple
 
 
 [alias]
-	st = status -s
+    st = status -s
     cl = clone
     ci = commit
     co = checkout
@@ -57,7 +57,7 @@
     amend = commit --amend
     caa = commit -a --amend -C HEAD
 
- 	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn]" --decorate --numstat
     lc  = "!f() { git ll "$1"^.."$1"; }; f"
     lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
@@ -66,17 +66,17 @@
 
     lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
     ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	le = log --oneline --decorate
+    le = log --oneline --decorate
 
-	d = diff --word-diff
+    d = diff --word-diff
     dc = diff --cached
     # diff last commit
     dlc = diff --cached HEAD^
     dr  = "!f() { git diff -w "$1"^.."$1"; }; f"
     diffr  = "!f() { git diff "$1"^.."$1"; }; f"
-	
-	r = reset
-	r1 = reset HEAD^
+    
+    r = reset
+    r1 = reset HEAD^
     r2 = reset HEAD^^
     rh = reset --hard
     rh1 = reset HEAD^ --hard
@@ -90,26 +90,26 @@
     sa = stash apply
     ss = stash save
 
- 	assume = update-index --assume-unchanged
+    assume = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
     # show assumed files
-	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
     assumeall = "!git status -s | awk {'print $2'} | xargs git assume"
 
-	# subtree
-	sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f"
+    # subtree
+    sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f"
     sbu = "!f() { git subtree pull --prefix $2 $1 master --squash; }; f"
 
     # last tag created
-	lasttag = describe --tags --abbrev=0
+    lasttag = describe --tags --abbrev=0
     lt = describe --tags --abbrev=0
 
-	# conflict/merges
+    # conflict/merges
     ours = "!f() { git co --ours $@ && git add $@; }; f"
     theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
-	#list remotes
+    #list remotes
     rem="!git config -l | grep remote.*url | tail -n +2"
 
     #apply patch from other local repo
@@ -128,7 +128,7 @@
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
     alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -"
 
-	# grep from root folder
+    # grep from root folder
     gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
 
     # rename branch tree to done-
@@ -137,20 +137,20 @@
     # add bitbucket remote
     ra = "!f() { git remote add $1 https://bitbucket.org/$2.git; }; f"
 
-	wl = worktree list
-	undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
+    wl = worktree list
+    undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
 
-	all = "!f() { ls -R -d */.git | xargs -I{} bash -c \"echo {} && git -C {}/../ $1\"; }; f"
+    all = "!f() { ls -R -d */.git | xargs -I{} bash -c \"echo {} && git -C {}/../ $1\"; }; f"
 
-	untrack = rm --cache --
-	k = !gitk
-	gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
-	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-	intercommit = !sh -c 'interdiff <(git show $1) <(git show $2) | less -FRS' -
+    untrack = rm --cache --
+    k = !gitk
+    gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    intercommit = !sh -c 'interdiff <(git show $1) <(git show $2) | less -FRS' -
 
-	empty-tree-sha1 = hash-object -t tree /dev/null
+    empty-tree-sha1 = hash-object -t tree /dev/null
 
-	graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
