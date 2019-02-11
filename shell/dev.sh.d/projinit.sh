@@ -21,9 +21,35 @@ function mvninit() {
   fi
 }
 
+function cmakeinit() {
+  if [ $# != 1 ]; then
+      echo "$0 appname"
+  else
+      export APP_NAME=$1
+      export APP_CTIME=`date "+%Y-%m-%dT%H:%M:%S%:z"`
+
+      mkdir -p $APP_NAME/src
+      CMK_TMPL=${TRIBF_SHELL_HOME}/dev.sh.d/templ/cmake/simple.cmake.tmpl
+      CMK_TARGET=$APP_NAME/CMakeLists.txt
+      SRC_TMPL=${TRIBF_SHELL_HOME}/dev.sh.d/templ/cmake/main.cpp.tmpl
+      SRC_TARGET=$APP_NAME/src/main.cpp
+      envsubst '${APP_NAME} ${APP_CTIME}' < ${CMK_TMPL} > $CMK_TARGET
+      envsubst '${APP_NAME} ${APP_CTIME}' < ${SRC_TMPL} > $SRC_TARGET
+      cd $APP_NAME && mkdir build && cd build && cmake .. && make
+  fi
+}
+
 case $1 in
   mvn )
       shift
       mvninit $*
+      ;;
+  cmake )
+      shift
+      cmakeinit $*
+      ;;
+
+  * )
+    echo "$0 [mvn|cmake]"
       ;;
 esac

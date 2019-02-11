@@ -1,0 +1,25 @@
+///////////////////////////////////////////////////////////////////////////////
+/// @brief the description of the file
+/// @author tribf tribf@tribf.com
+/// @version 1.0
+/// @date ${APP_CTIME}
+/// @note
+///////////////////////////////////////////////////////////////////////////////
+
+// <Date>     | <Author>    | <Description>
+// ----------------------------------------------------------------------------
+// ${APP_CTIME} | tribf   | create this file
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char* argv[]) {
+    printf("%s\n", "hello world");
+
+    char *APP_HOME = getenv("APP_HOME");
+    if (APP_HOME == nullptr) {
+        fprintf(stderr, "%s\n", "APP_HOME not set");
+        exit(-1);
+    }
+}
