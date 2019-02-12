@@ -16,20 +16,35 @@ project(${APP_NAME})
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE "Release")
 
-set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/bin)
-message(STATUS "Project status:")
+set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/target)
+message(STATUS ">Project status:")
 message(STATUS "    PROJECT_NAME: ${PROJECT_NAME}")
 message(STATUS "    PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
+message(STATUS "    CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
+message(STATUS "    CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}")
 message(STATUS "    CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 message(STATUS "")
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-set(LIBS ${LIBS} m)
+include(GNUInstallDirs)
 
-set(SOURCE_FILES src/main.cpp)
+install(
+        FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/conf/app_config.json
+        COMPONENT runtime
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/conf
+)
 
+install(
+        PROGRAMS
+        ${CMAKE_CURRENT_SOURCE_DIR}/bin/run.sh
+        COMPONENT runtime
+        DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
-
-target_link_libraries(${PROJECT_NAME} ${LIBS})
+install(
+        DIRECTORY
+        COMPONENT runtime
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/logs
+)

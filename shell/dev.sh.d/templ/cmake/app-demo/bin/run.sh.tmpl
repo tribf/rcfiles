@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+#=============================================================================
+# set APP_HOME
+#=============================================================================
+set_app_home_and_go_into() {
+    APP_SHELL_FILE=$BASH_SOURCE
+    APP_SHELL_FILE_PATH=`readlink -f $APP_SHELL_FILE`
+    APP_SHELL_FILE_DIR=`dirname "$APP_SHELL_FILE_PATH"`
+    export APP_HOME=`dirname "$APP_SHELL_FILE_DIR"`
+    if [ -z "$APP_HOME" ] ; then
+        echo
+        echo "Error: APP_HOME environment variable is not defined correctly."
+        echo
+        exit 1
+    fi
+
+    cd $APP_HOME
+}
+
+set_app_home_and_go_into
+
+#=============================================================================
+# set LOG_FILE & PID_FILE & RUN_CMD
+#=============================================================================
+stdoutFile="$APP_HOME/logs/stdout.log"
+stderrFile="$APP_HOME/logs/stderr.log"
+pidFile="$APP_HOME/bin/run.pid"
+
+MAIN_EXE="./bin/${APP_MAIN_EXE}"
+
+start(){
+    RUN_CMD="$MAIN_EXE $@"
+    RUN_CMD="$RUN_CMD >> \"$stdoutFile\" 2>> \"$stderrFile\" & echo \$! >$pidFile"
+
+    echo
+    echo "APP_HOME: $APP_HOME"
+    echo
+
+    if [ ! -s $pidFile ];then
+        echo $RUN_CMD
+        eval $RUN_CMD
+        echo "$MAIN_EXE started ..."
+        exit 0
+    fi
+
+    run_pid=`cat $pidFile`
+    if [ ! -n "$(ps -p $run_pid -o pid=)" ];then
+        echo $RUN_CMD
+        eval $RUN_CMD
+        echo "$MAIN_EXE started ..."
+    else
+        echo "$MAIN_EXE exists, please check..."
+    fi
+}
+
+stop(){
+    run_pid=`cat $pidFile`
+    kill $run_pid >/dev/null 2>&1
+
+    sleep 1
+    run_pid=`cat $pidFile`
+    if [ ! -n "$(ps -p $run_pid -o pid=)" ];then
+        echo "stop success!!!"
+    else
+        kill -9 $run_pid >/dev/null 2>&1
+        echo "stop success!!!"
+    fi
+}
+
+
+case $1 in
+    start )
+        start
+        ;;
+    stop )
+        stop
+        ;;
+    restart )
+        stop
+        start
+        ;;
+    * )
+        echo "$0 [start|stop|restart]"
+        ;;
+esac

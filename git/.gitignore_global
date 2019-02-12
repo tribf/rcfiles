@@ -24,6 +24,7 @@
 *.iws
 
 target
+cmake-build-debug
 
 .classpath
 .project
@@ -71,7 +72,7 @@ target
 *.so
 *.pyc
 *.pyo
-*.apk 
+*.apk
 *.jar
 *.war
 *.ear
@@ -108,4 +109,3 @@ target
 ehthumbs.db
 Thumbs.db
 desktop.ini
-

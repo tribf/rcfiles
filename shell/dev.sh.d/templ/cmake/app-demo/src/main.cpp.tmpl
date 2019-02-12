@@ -11,15 +11,17 @@
 // ${APP_CTIME} | tribf   | create this file
 
 
-#include <cstdio>
-#include <cstdlib>
+#include "conf/AppConfig.h"
 
 int main(int argc, char* argv[]) {
-    printf("%s\n", "hello world");
+    INFO("%s started", argv[0]);
 
     char *APP_HOME = getenv("APP_HOME");
     if (APP_HOME == nullptr) {
-        fprintf(stderr, "%s\n", "APP_HOME not set");
+        ERROR("%s", "APP_HOME not set");
         exit(-1);
     }
+
+    auto *appConfig = new AppConfig();
+    appConfig->loadAppConf(APP_HOME);
 }
