@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 import sys
 
@@ -13,7 +13,7 @@ def main(argv):
         print('argv[0] <dd> ...')
     else:
         for i in range(1, len(sys.argv)):
-            print(dd2dms(float(argv[i])))   
+            print(dd2dms(float(argv[i])))
 
 if __name__ == '__main__':
     main(sys.argv)

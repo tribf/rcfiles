@@ -29,6 +29,8 @@
 }while(0)
 
 
+#define INFOX() std::cout << Logger::unixtime_str2() << " [INFO] (" << Logger::path_to_filename(__FILE__) << ":" << __LINE__ << ":" << __FUNCTION__ << "): "
+#define ERRORX() std::cerr << Logger::unixtime_str2() << " [ERROR] (" << Logger::path_to_filename(__FILE__) << ":" << __LINE__ << ":" << __FUNCTION__ << "): "
 
 
 class Logger {

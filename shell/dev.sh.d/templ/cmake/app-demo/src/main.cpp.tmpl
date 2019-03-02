@@ -22,6 +22,6 @@ int main(int argc, char* argv[]) {
         exit(-1);
     }
 
-    auto *appConfig = new AppConfig();
-    appConfig->loadAppConf(APP_HOME);
+    AppConfig appConfig;
+    appConfig.loadAppConf(APP_HOME);
 }

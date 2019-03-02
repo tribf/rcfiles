@@ -77,6 +77,9 @@ alias dic='sdcv'
 alias dstat='dstat -cdlmnpsy'
 alias clc='clear'
 
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
+
 #=============================================================================
 # alias for quick open
 #=============================================================================
