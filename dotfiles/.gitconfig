@@ -7,7 +7,8 @@
     excludesfile = /home/tribf/.gitignore_global
     pager=less -x4
     autocrlf = input
-
+    quotepath = false
+    
 [color]
     branch = auto
     diff = auto
@@ -74,7 +75,7 @@
     dlc = diff --cached HEAD^
     dr  = "!f() { git diff -w "$1"^.."$1"; }; f"
     diffr  = "!f() { git diff "$1"^.."$1"; }; f"
-    
+
     r = reset
     r1 = reset HEAD^
     r2 = reset HEAD^^
@@ -153,4 +154,3 @@
     graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
