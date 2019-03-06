@@ -5,10 +5,9 @@
 [core]
     editor = vim
     excludesfile = /home/tribf/.gitignore_global
-    pager=less -x4
     autocrlf = input
     quotepath = false
-    
+
 [color]
     branch = auto
     diff = auto
@@ -34,6 +33,11 @@
 [push]
     default = simple
 
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [alias]
     st = status -s
