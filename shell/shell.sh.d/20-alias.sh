@@ -79,6 +79,8 @@ alias clc='clear'
 
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
+alias emacs-cn="export LC_CTYPE=zh_CN.UTF-8; emacs";
+
 
 #=============================================================================
 # alias for quick open
