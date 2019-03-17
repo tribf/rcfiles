@@ -12,5 +12,5 @@ function find_file() {
 
 function find_after_copy_from_ntfs() {
     find ./ -type d -perm 777 -print -exec chmod 755 {} \;
-    find ./ -type f -perm 755 -print -exec chmod a-x {} \;
+    find ./ -type f -perm 777 -print -exec chmod a-x {} \;
 }

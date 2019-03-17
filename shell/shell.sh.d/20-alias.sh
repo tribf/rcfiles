@@ -76,6 +76,7 @@ alias grep="grep --color=auto"
 alias dic='sdcv'
 alias dstat='dstat -cdlmnpsy'
 alias clc='clear'
+alias dirs="dirs -v"
 
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
@@ -92,6 +93,7 @@ if [ -z "$DISPLAY" ] ; then
 else
     alias -s png=eog
     alias -s jpg=eog
+    alias -s tif=eog
     alias -s pdf=evince
     alias -s md=typora
     alias -s html=google-chrome
