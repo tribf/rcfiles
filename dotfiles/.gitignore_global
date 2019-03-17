@@ -109,3 +109,11 @@ cmake-build-debug
 ehthumbs.db
 Thumbs.db
 desktop.ini
+
+######################################
+# Latex
+######################################
+*.aux
+*.out
+*.toc
+*.dvi
