@@ -12,7 +12,7 @@ function nmap_scan_rasp() {
 }
 
 function nmap_update_mactable() {
-    wget https://raw.githubusercontent.com/nmap/nmap/master/nmap-mac-prefixes && sudo mv nmap-mac-prefixes /usr/share/nmap/nmap-mac-prefixes
+    sudo wget https://raw.githubusercontent.com/nmap/nmap/master/nmap-mac-prefixes -O /usr/share/nmap/nmap-mac-prefixes
 }
 
 function nmap_find_mac_vendor() {
