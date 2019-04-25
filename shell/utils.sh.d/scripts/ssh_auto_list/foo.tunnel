@@ -1,0 +1,4 @@
+
+tunnels=(
+    "ssh -fNg -o serveraliveinterval=60 -L 22222:127.0.0.1:22 tribf@127.0.0.1"
+)

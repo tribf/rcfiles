@@ -1,6 +1,7 @@
 
 
 *.pem
+proxychains.conf
 
 ######################################
 # backup files
