@@ -39,10 +39,6 @@ case `uname -o` in
         ##########---------- set PATH OC ----------###########
         export PATH=$PATH:$HOME/app/oc
 
-        ##########---------- I can go ANYwhere ----------###########    !!! Have conflict with VIM tab
-        # [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
-
-
         ##########---------- set PATH TORCH ----------###########
         # . $HOME/github/torch/install/bin/torch-activate
         ;;
