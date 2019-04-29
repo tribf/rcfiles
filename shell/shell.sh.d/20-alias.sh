@@ -80,8 +80,8 @@ alias dirs="dirs -v"
 
 alias e='emacsclient -t'
 alias ec='emacsclient -c'
-alias emacs-cn="export LC_CTYPE=zh_CN.UTF-8; emacs";
-
+alias emacs-cn='export LC_CTYPE=zh_CN.UTF-8; emacs'
+alias pc='/usr/bin/proxychains'
 
 #=============================================================================
 # alias for quick open
