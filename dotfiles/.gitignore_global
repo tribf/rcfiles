@@ -71,8 +71,6 @@ cmake-build-debug
 *.exe
 *.o
 *.so
-*.pyc
-*.pyo
 *.apk
 *.jar
 *.war
@@ -123,3 +121,14 @@ desktop.ini
 # CMake
 ######################################
 build
+
+
+######################################
+# python
+######################################
+dist/
+build/
+*.egg-info
+*.pyc
+*.pyo
+__pycache__
