@@ -51,7 +51,7 @@ alias 1='cd -'
 #=============================================================================
 # alias for cmake
 #=============================================================================
-alias oocmake='mkdir build && cd build && cmake .. && make' # out-of-source cmake
+alias cmake_oo='mkdir build && cd build && cmake .. && make' # out-of-source cmake
 
 
 #=============================================================================
