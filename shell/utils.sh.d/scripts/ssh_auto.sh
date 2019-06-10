@@ -17,7 +17,7 @@ function usage()
     echo ""
     echo "ssh auto establish script"
     echo ""
-    echo "Usage: `basename $0` -t <tunnel_name> -e <on|off|show>"
+    echo "Usage: `basename $0` -t <tunnel_name> -c <on|off|show>"
     echo ""
     echo "Options:"
     echo "    -t <tunnel_name>      target tunnel name"
