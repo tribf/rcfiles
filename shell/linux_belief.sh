@@ -11,7 +11,7 @@
 
 type figlet > /dev/null 2>&1
 if [[ $? == 0 ]]; then
-    figlet -w 100  we hack everything
+    figlet -w 80 Be In Focus
 fi
 
 

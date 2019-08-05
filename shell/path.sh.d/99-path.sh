@@ -23,6 +23,7 @@ case `uname -o` in
         export PATH=$PATH:/c/Users/SIAE302_BF/AppData/Local/atom/bin
         ;;
     GNU/Linux)
+        export PATH=$PATH:$HOME/.local/bin
         # export PATH=$PATH:/opt/clion-2016.2.2/bin/
         # export PATH=$PATH:/opt/Qt5.7.0/Tools/QtCreator/bin/
         # export PATH=$PATH:/opt/arduino-1.6.12/

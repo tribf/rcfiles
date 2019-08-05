@@ -33,3 +33,8 @@ function nvm_upgrade() {
 # [creationix/nvm](https://github.com/creationix/nvm)
 
 # END Note
+
+
+export N_PREFIX=$HOME/app/noderoot
+export NODEJS_HOME=$N_PREFIX
+export PATH=$NODEJS_HOME/bin:$PATH
