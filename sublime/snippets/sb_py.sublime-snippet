@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+# tr!bf tribf@tribf.com
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sb</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python,source.py</scope>
+</snippet>
