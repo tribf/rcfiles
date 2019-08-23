@@ -32,6 +32,9 @@ cmake-build-*
 .settings
 .metadata
 
+*.pro.user
+.qmake.stash
+
 *.sublime-workspace
 
 .vscode
